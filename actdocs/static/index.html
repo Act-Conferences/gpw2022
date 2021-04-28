@@ -1,235 +1,150 @@
 [% WRAPPER ui title = global.conference.name %]
-<!-- validate this with
-     https://search.google.com/structured-data/testing-tool?hl=de
--->
-<script type='application/ld+json'>
-{
-  "@context": "http://www.schema.org",
-  "@type": "Event",
-  "name": "Deutscher Perl/Raku-Workshop, Leipzig 2022",
-  "url": "https://act.yapc.eu/gpw2022/",
-  "description": "Der Deutsche Perl/Raku-Workshop ist eine jährlich in Deutschland stattfindende Konferenz von und für Entwickler der Programmiersprache Perl und Raku.",
-  "startDate": "2022-03-30T09:00",
-  "endDate": "2022-04-01T19:00",
-  "location": {
-    "@type": "Place",
-    "name": "Leipzig",
-    "sameAs": "https://www.german-perl-workshop.de/",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",
-      "addressLocality": "Leipzig",
-      "postalCode": "",
-      "addressCountry": "Deutschland"
-    }
-  },
-  "offers": {
-    "@type": "AggregateOffer",
-    "highPrice": 250,
-    "lowPrice": 50,
-    "offerCount": 3,
-    "offers": [{
-      "@type": "Offer",
-      "description": "Ticket",
-      "url": "https://act.yapc.eu/gpw2022/preise.html",
-      "price": "70",
-      "priceCurrency": "EUR"
-    },{
-      "@type": "Offer",
-      "description": "Firmenticket",
-      "url": "https://act.yapc.eu/gpw2022/preise.html",
-      "price": "250",
-      "priceCurrency": "EUR"
-    },{
-      "@type": "Offer",
-      "description": "Studententicket",
-      "url": "https://act.yapc.eu/gpw2022/preise.html",
-      "price": "50",
-      "priceCurrency": "EUR"
-    }]
-  }
-}
-</script>
-<h2>
-  <t>
-    <de>24. Deutscher Perl/Raku-Workshop 2022 Leipzig</de>
-    <en>24th German Perl/Raku Workshop 2022 in Leipzig</en>
-  </t>
-  <small class="text-muted dateaddon">
-    <t>
-      <de> vom 30. März bis 01. April 2022</de>
-      <en> from 30th March to 1sth April 2022</en>
-    </t>
-  </small>
-</h2>
 
-<h3>
-  <t>
-    <de>Über den Deutschen Perl/Raku-Workshop 2022</de>
-    <en>About the German Perl/Raku Workshop conference 2022</en>
-  </t>
-</h3>
-<p>
-  <t>
-    <de>
-      Der Deutsche Perl/Raku-Workshop ist eine jährlich in Deutschland
-      stattfindende <strong>Open-Source-Konferenz für jedermann</strong>.
-      </p>
-      <p>
-      Im Jahr 2022 wird er in Leipzig stattfinden, im <a href="https://www.michaelis-leipzig.de/">Hotel Michaelis</a>.
-      </p>
-      <p>
-         Der Workshop beginnt am <b>Mittwoch, den 30. März 2022 um 09:00 Uhr</b> und endet am <b>Freitag, den 01. April,
-         um etwa 16:00 Uhr</b>. Im Jahr 2022 nennen wir ihn "German Perl, Raku &amp; Software Engineering Workshop - gpw2022"<br>.
-    </de>
-    <en>
-      The German Perl/Raku Workshop is an <strong>Open Source conference for everyone</strong>.
-      </p>
-      <p>
-         The 2022 edition will be from <b>Wednesday, March 30th, 09:00</b> to <b>Friday, April 1st, 16:00</b>
-         in Leipzig in the <a href="https://www.michaelis-leipzig.de/">Hotel Michaelis</a>.
-    </en>
-  </t>
-</p>
-<p>
-  <t>
-    <de>
-      Bitte beachte den <a href="code_of_conduct.html">Verhaltenskodex</a>.
-    </de>
-    <en>
-      Please observe the <a href="code_of_conduct.html">Code of Conduct</a>.
-    </en>
-  </t>
-</p>
-<p>
-  <t>
-    <de>Die Vorträge werden  überwiegend in Deutsch gehalten (mit Folien auf Englisch). Vorträge auf Englisch sind ebenfalls sehr willkommen.<br>
-    </de>
-    <en>
-      Most of the talks will be held in German, German talks will have English slides at least. English talks are welcome as well.</p>
-    </en>
-  </t>
-</p>
-
-[% IF global.config.registration_open AND NOT global.request.user.has_registered %]
-<p>
-  <a href="[% make_uri('register') %]" class="btn btn-primary btn-block" role="button"[%# active btn-gpw aria-pressed="true" %]>
-    <t>
-      <de>Jetzt für den Workshop anmelden</de>
-      <en>Signup for attendance now</en>
-    </t>
-  </a>
-</p>
-[% END %]
-[% IF global.config.talks_submissions_open %]
-<h3>
-  <t>
-    <de>Wir suchen Dich als Vortragenden!</de>
-    <en>We want you as a speaker!</en>
-  </t>
-</h3>
-<p>
-  <a href="[% make_uri('newtalk') %]" class="btn btn-primary btn-block" role="button">
-    <t>
-      <de>Vortrag einreichen</de>
-      <en>Submit a talk</en>
-    </t>
-  </a>
-</p>
-[% END %]
-<!--
-<p>
-  <a href="[% make_uri('wanted.html') %]" class="btn btn-primary btn-block" role="button"[%# active btn-gpw aria-pressed="true" %]>
-    <t>
-      <de>Vorschläge für Vorträge</de>
-      <en>Talk suggestions</en>
-    </t>
-  </a>
-</p>
--->
-<h3>
-  <t>
-    <de>Wichtige Informationen</de>
-    <en>Important information</en>
-  </t>
-</h3>
-<ul>
-<!--
-  <li>
-    <t>
-      <de>Details zum</de>
-      <en>About the</en>
-    </t>
-    <a href="venue.html">
-      <t>
-        <de>Veranstaltungsort</de>
-        <en>venue</en>
-      </t>
-    </a>
-  </li>
--->
-  <li>
-    <a href="preise.html"><t><de>Preisübersicht</de><en>Pricing</en></t></a>
-  </li>
-<!--
-  <li>
-    <t>
-      <de>
-        Auch dieses Jahr
-        <a href="social_event.html">laden wir die Teilnehmer zu einem gemeinsamen Abendessen ein</a>.
-      </de>
-      <en>
-        Following our tradition, <a href="social_event.html">we invite all attendees to a diner.</a>
-      </en>
-    </t>
-  </li>
-  <li>Extras:
-    <a href="wiki?node=VorabendTreffen">
-      <t>
-        <de>Vorabend-Treffen</de>
-        <en>Pre-conference meeting</en>
-      </t>
-    </a>
-  </li>
--->
-</ul>
-<p>
-  <t>
-    <de>E-Mail-Kontakt</de>
-    <en>E-mail contact</en>
-  </t>: <a href="mailto:orga2022@german-perl-workshop.de" class="email icon-envelope">mailto:orga2022@german-perl-workshop.de</a>
-</p>
-
-
-[%
-    news = global.news(3);
-    IF news.size > 2;
-        more = news.pop;
-    END;
-%]
-[% IF news.size %]
-<h3>
-  <t><de>Aktuellste Neuigkeiten</de><en>Latest news</en></t>
-  <a href="atom/[% global.request.language %].xml"><img src="images/feed-icon-14x14.png" alt="Atom feed"></a>
-</h3>
-<div class="newsblock clearfixafter">
-[% FOREACH item = news %]
-  <article class="news-entry col-xs-12">
-    <header class="news-header">
-      <h4>
-        <span class="news-date">[% date_format(item.datetime, 'date_short') %]</span>
-        <span class="news-title">[% item.title %]</span>
-      </h4>
-    </header>
-    <section class="news-text">
-      [% item.content %]
-    </section>
-  </article>
-  [% END %]
-[% END %]
-[% IF more %]
-  <p class="pull-right"><a href="news" class="news-link"><t><de>Alle Neuigkeiten</de><en>All news</en></t></a></p>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">German Perl-/Raku-Workshop!</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#workshop">Tell Me More</a>
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section" id="workshop">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">24th German Perl Workshop</h2>
+                    <h3 class="section-subheading text-muted">30th March - 01st April 2022</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <h4 class="my-3">About the German Perl/Raku Workshop conference 2022</h4>
+                        <p class="text-muted">
+                             The German Perl/Raku Workshop is an Open Source conference for everyone.
+                        </p>
+                        <p class="text-muted">
+The 2022 edition will be from Wednesday, March 30th, 09:00 to Friday, April 1st, 16:00 in Leipzig in the Hotel Michaelis.
+                        </p>
+                        <p class="text-muted">
+Please observe the Code of Conduct.
+                        </p>
+                        <p class="text-muted">
+Most of the talks will be held in German, German talks will have English slides at least. English talks are welcome as well.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="btn btn-primary btn-xl text-uppercase" href="">Sign up for attendance</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="news">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">News</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">News 1</h5>
+    <p class="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
 </div>
-[% END %]
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Custom</h5>
+    <p class="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About-->
+        <section class="page-section" id="sponsors">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Sponsors</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span><img src="http://act.yapc.eu/gpw2021/images/Logo_united-domains_rgb_72_invers.jpg" width="250px"></span>
+                        <h4 class="my-3">United Domains</h4>
+                        <p class="text-muted">
+united-domains, that is a team of about 80 qualified and experienced employees, who are reliable and take care of your domains with passion. Our promise is: »The best addresses for the web«. Because we are convinced that there is It makes a difference, who is in charge of your domains. united-domains is equipped with more than 1.6 million registered domains and more than 300,000 satisfied customers of one of the leading domain registrars in Europe. We offer over 850 domain extensions: From .ag like Antigua to .za for South Africa or new domain extensions like .app or .dev. The worldwide domain check, a fast and secure domain registration and the clearly arranged domain administration are our trademarks. 
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <span><img src="http://act.yapc.eu/gpw2021/images/strato_logo.jpg" width="250px"></span>
+                        <h4 class="my-3">Strato</h4>
+                        <p class="text-muted">
+Wer sind wir?
 
+1997 gegründet, gehört STRATO mit über 4 Millionen Domains und mehr als 2 Millionen Kunden heute zu den größten Webhosting-Anbietern weltweit. STRATO beschäftigt rund 500 Mitarbeiter und betreibt zwei TÜV-zertifizierte Rechenzentren mit über 70.000 Servern in Berlin und Karlsruhe. Die STRATO AG ist ein Unternehmen der United Internet-Gruppe.
+
+Wo brauchen wir Deine Perl-Kenntnisse?
+
+Im Provisioning Team: Wir pflegen und entwickeln die Software und Prozesslandschaft für die technische Steuerung der gesamten STRATO Plattform (Webhosting, Server, Storage, Netz-Infrastruktur etc.).
+
+Im Team Shared Hosting: Wir pflegen und entwickeln Open-Source-basierte Software (Service-Frontends, Mail- und Filesystem, etc.) für den Shared-Webhosting-Service (die Hosting-Pakete von STRATO) mit rund 1,5 Mio. Kunden. Wir verstehen unsere Software möglichst weitreichend, um die Kontrolle über Funktionalitäten zu behalten und bei Fehlern schnell selbst reagieren zu können. Ständig sind wir bestrebt, weiter zu optimieren, beobachten daher die Performance der Live-Umgebung und unterstützen bei Problemen. Darüber hinaus entwerfen und entwickeln wir neue Tools, die z.B. Prozesse verbessern oder unsere Plattform schützen. 
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <span><img src="http://act.yapc.eu/gpw2021/images/Edument-logo-standard.png" width="250px"></span>
+                        <h4 class="my-3">Edument</h4>
+                        <p class="text-muted">
+Edument provides Raku support and consulting, develops the leading Raku IDE Comma, and supports the development of Cro, the most popular libraries for building web services and applications in Raku. Edument also offers development and training services in a wide range of other technologies, including developer tooling and compiler implementation. 
+                        </p>
+                    </div>
+                </div>
+                    <div class="text-center">
+                        <div id="success"></div>
+                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Become a sponsor!</button>
+                    </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Contact Us</h2>
+                </div>
+                <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div id="success"></div>
+                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
 [% END %]
