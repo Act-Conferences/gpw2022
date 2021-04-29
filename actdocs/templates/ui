@@ -17,6 +17,11 @@
 
   	<!-- Latest compiled and minified CSS -->
   	<link rel="stylesheet" href="css/styles.css" crossorigin="anonymous">
+[% IF !mainpage %]
+    <script type="text/javascript">
+        var subpage = 1;
+    </script>
+[% END %]
   </head>
 
     <body id="page-top">
