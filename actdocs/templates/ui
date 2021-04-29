@@ -32,15 +32,36 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html">Workshop</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#news">News</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#sponsors">Sponsors</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="main">Login</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#news">News</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#sponsors">Sponsors</a></li>
+[% IF global.request.user.has_registered %]
+                        <li class="nav-item"><a class="nav-link" href="[% make_uri('logout') %]">Logout</a></li>
+[% ELSE %]
+                        <li class="nav-item"><a class="nav-link" href="[% make_uri('main') %]">Login</a></li>
+[% END %]
                     </ul>
                 </div>
             </div>
         </nav>
 
+[% IF !mainpage %]
+        <section class="page-section" id="workshop">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase"><t><de>Impressum</de><en>Imprint</en></t></h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+[% END %]
+
         [% content %]
+
+[% IF !mainpage %]
+                    </div>
+                </div>
+            </div>
+        </section>
+[% END %]
 
         <!-- Footer-->
         <footer class="footer py-4">
