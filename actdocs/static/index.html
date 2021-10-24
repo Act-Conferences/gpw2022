@@ -1,4 +1,55 @@
 [% WRAPPER ui mainpage = 1 %]
+<!-- validate this with
+     https://search.google.com/structured-data/testing-tool?hl=de
+-->
+<script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "Event",
+  "name": "Deutscher Perl/Raku-Workshop, Leipzig 2022",
+  "url": "https://act.yapc.eu/gpw2021/",
+  "description": "Der Deutsche Perl/Raku-Workshop ist eine jährlich in Deutschland stattfindende Konferenz von und für Entwickler der Programmiersprache Perl und Raku.",
+  "startDate": "2022-03-30T09:00",
+  "endDate": "2022-04-01T16:00",
+  "location": {
+    "@type": "Place",
+    "name": "Leipzig",
+    "sameAs": "https://www.german-perl-workshop.de/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "",
+      "addressLocality": "Leipzig",
+      "postalCode": "",
+      "addressCountry": "Deutschland"
+    }
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "highPrice": 250,
+    "lowPrice": 50,
+    "offerCount": 3,
+    "offers": [{
+      "@type": "Offer",
+      "description": "Ticket",
+      "url": "https://act.yapc.eu/gpw2022/preise.html",
+      "price": "70",
+      "priceCurrency": "EUR"
+    },{
+      "@type": "Offer",
+      "description": "Firmenticket",
+      "url": "https://act.yapc.eu/gpw2022/preise.html",
+      "price": "250",
+      "priceCurrency": "EUR"
+    },{
+      "@type": "Offer",
+      "description": "Studententicket",
+      "url": "https://act.yapc.eu/gpw2022/preise.html",
+      "price": "50",
+      "priceCurrency": "EUR"
+    }]
+  }
+}
+</script>
 
         <!-- Masthead-->
         <header class="masthead">
