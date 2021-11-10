@@ -138,11 +138,11 @@
                     <div class="col-md-12">
                       <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><a href="news/[% item.news_id %]">[% item.title %]</a></h5>
+                            <h5 class="card-title"><a href="[% make_uri('news') %]">[% item.title %]</a></h5>
                             <h6 class="card-subtitle text-muted">[% date_format(item.datetime, 'date_short') %]</h6>
                             <p class="card-text text-muted">[% item.content %]</p>
                             <!--
-                            <a href="news/[% item.news_id %]" class="btn btn-primary"><t><en>Read post</en><de>Lesen</de></a>
+                            <a href="[% make_uri('news_id') %]" class="btn btn-primary"><t><en>Read post</en><de>Lesen</de></a>
                             -->
                         </div>
                       </div>
