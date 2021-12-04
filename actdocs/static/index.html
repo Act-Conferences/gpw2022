@@ -63,7 +63,7 @@
         <section class="page-section" id="workshop">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase"><t><en>24th German Perl Workshop</en><de>24. Deutscher Perl WOrkshop</de></h2>
+                    <h2 class="section-heading text-uppercase"><t><en>24th German Perl/Raku Workshop</en><de>24. Deutscher Perl/Raku Workshop</de></h2>
                     <h3 class="section-subheading text-muted"><t><en>30th March - 01st April 2022</en><de>30. März bis 1. April 2022</de></h3>
                 </div>
                 <div class="row text-center">
@@ -118,6 +118,53 @@
                 </div>
             </div>
         </section>
+
+        <section class="page-section bg-light" id="cfp">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase"><t><en>Call for Presentations</en><de>Vorträge einreichen</de></h2>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-6">
+
+                        <h4 class="my-3"><t><en>Call for Presentations</en><de>Vorträge einreichen</de></t></h4>
+
+                        <p class="text-muted">
+                             <t>
+                               <de>
+Das Thema in 2022 ist <strong>full script power</strong> – das steht für mächtige Skriptprogrammierung sowie das Potenzial, das Perl und Raku mit ihrer herausragenden Implementierung von Unicode und aller Skripte (Schriftsysteme) bieten. Vorträge mit diesen Schwerpunkten sind besonders gesucht, aber alle Beiträge zu Perl, Raku (früher Perl&nbsp;6) und Software-Entwicklung allgemein sind willkommen.
+                               </de>
+                               <en>
+The theme in 2022 is <b>full script power</b>—powerful script programming as well as the potential of Perl and Raku with their outstanding implementations of Unicode and all its scripts. We’re looking for talks covering the named theme but accept any contributions regarding Perl, Raku (formerly Perl&nbsp;6) or software development in general.
+                               </en>
+                             </t>
+                        </p>
+                        <p class="text-muted">
+                          <t>
+                            <de>
+Wir suchen nach Vorträgen mit 40 Minuten oder 20 Minuten Länge, sowie auch Kurzbeiträge ("Lightning Talks") mit einer Länge von 5 Minuten oder weniger. Für andere Formate wendet Euch bitte per E-Mail an die Veranstalter. Inspiration für Vorträge stehen im <a href="cfp.html">vollständigen CfP</a>
+                            </de>
+                            <en>
+We are looking for your contribution in the form a talk (20 minutes or 40 minutes),
+a lighting talk (5 minutes) or a workshop (2-4 hours). Some ideas for talks are listed in the <a href="cfp.html">Call for Presentations</a>
+                            </en>
+                          </t>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="btn btn-primary btn-xl text-uppercase" href="newtalk">
+                            <t>
+                                <en>Submit a talk</en>
+                                <de>Vortrag einreichen</de>
+                            </t>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
         <!-- Portfolio Grid-->
 [%
     news = global.news(3);
@@ -126,7 +173,7 @@
     END;
 %]
 [% IF news.size %]
-      <section class="page-section bg-light" id="news">
+      <section class="page-section" id="news">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase"><t><de>Aktuellste Neuigkeiten</de><en>Latest news</en></t>
@@ -141,9 +188,6 @@
                             <h5 class="card-title"><a href="news/[% item.news_id %]">[% item.title %]</a></h5>
                             <h6 class="card-subtitle text-muted">[% date_format(item.datetime, 'date_short') %]</h6>
                             <p class="card-text text-muted">[% item.content %]</p>
-                            <!--
-                            <a href="news/[% item.news_id %]" class="btn btn-primary"><t><en>Read post</en><de>Lesen</de></a>
-                            -->
                         </div>
                       </div>
                     </div>
@@ -160,7 +204,7 @@
             </div>
         </section>
         <!-- About-->
-        <section class="page-section" id="sponsors">
+        <section class="page-section bg-light" id="sponsors">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase"><t><en>Sponsors</en><de>Sponsoren</de></t></h2>
@@ -190,7 +234,6 @@ requires Perl knowledge? Then you're at the right address: we support you in
         </t>
                         </p>
                     </div>
-
                     <div class="col-md-4">
                         <span><img src="images/geizhals_logo.svg" width="250px"></span>
                         <h4 class="my-3"><a href="https://geizhals.de/" target="_blank">Geizhals Preisvergleich</a></h4>
@@ -231,74 +274,6 @@ Unternehmen.
         </t>
                         </p>
                     </div>
-
-<!--
-                    <div class="col-md-4">
-                        <span><img src="http://act.yapc.eu/gpw2021/images/strato_logo.jpg" width="250px"></span>
-                        <h4 class="my-3">Strato</h4>
-                        <p class="text-muted">
-Wer sind wir?
-
-1997 gegründet, gehört STRATO mit über 4 Millionen Domains und mehr als 2 Millionen Kunden heute zu den größten Webhosting-Anbietern weltweit. STRATO beschäftigt rund 500 Mitarbeiter und betreibt zwei TÜV-zertifizierte Rechenzentren mit über 70.000 Servern in Berlin und Karlsruhe. Die STRATO AG ist ein Unternehmen der United Internet-Gruppe.
-
-Wo brauchen wir Deine Perl-Kenntnisse?
-
-Im Provisioning Team: Wir pflegen und entwickeln die Software und Prozesslandschaft für die technische Steuerung der gesamten STRATO Plattform (Webhosting, Server, Storage, Netz-Infrastruktur etc.).
-
-Im Team Shared Hosting: Wir pflegen und entwickeln Open-Source-basierte Software (Service-Frontends, Mail- und Filesystem, etc.) für den Shared-Webhosting-Service (die Hosting-Pakete von STRATO) mit rund 1,5 Mio. Kunden. Wir verstehen unsere Software möglichst weitreichend, um die Kontrolle über Funktionalitäten zu behalten und bei Fehlern schnell selbst reagieren zu können. Ständig sind wir bestrebt, weiter zu optimieren, beobachten daher die Performance der Live-Umgebung und unterstützen bei Problemen. Darüber hinaus entwerfen und entwickeln wir neue Tools, die z.B. Prozesse verbessern oder unsere Plattform schützen.
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <span><img src="http://act.yapc.eu/gpw2021/images/Edument-logo-standard.png" width="250px"></span>
-                        <h4 class="my-3">Edument</h4>
-                        <p class="text-muted">
-Edument provides Raku support and consulting, develops the leading Raku IDE Comma, and supports the development of Cro, the most popular libraries for building web services and applications in Raku. Edument also offers development and training services in a wide range of other technologies, including developer tooling and compiler implementation.
-                        </p>
-                    </div>
-                </div>
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Become a sponsor!</button>
-                    </div>
-            </div>
-                <!--
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span><img src="http://act.yapc.eu/gpw2021/images/Logo_united-domains_rgb_72_invers.jpg" width="250px"></span>
-                        <h4 class="my-3">United Domains</h4>
-                        <p class="text-muted">
-united-domains, that is a team of about 80 qualified and experienced employees, who are reliable and take care of your domains with passion. Our promise is: »The best addresses for the web«. Because we are convinced that there is It makes a difference, who is in charge of your domains. united-domains is equipped with more than 1.6 million registered domains and more than 300,000 satisfied customers of one of the leading domain registrars in Europe. We offer over 850 domain extensions: From .ag like Antigua to .za for South Africa or new domain extensions like .app or .dev. The worldwide domain check, a fast and secure domain registration and the clearly arranged domain administration are our trademarks.
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <span><img src="http://act.yapc.eu/gpw2021/images/strato_logo.jpg" width="250px"></span>
-                        <h4 class="my-3">Strato</h4>
-                        <p class="text-muted">
-Wer sind wir?
-
-1997 gegründet, gehört STRATO mit über 4 Millionen Domains und mehr als 2 Millionen Kunden heute zu den größten Webhosting-Anbietern weltweit. STRATO beschäftigt rund 500 Mitarbeiter und betreibt zwei TÜV-zertifizierte Rechenzentren mit über 70.000 Servern in Berlin und Karlsruhe. Die STRATO AG ist ein Unternehmen der United Internet-Gruppe.
-
-Wo brauchen wir Deine Perl-Kenntnisse?
-
-Im Provisioning Team: Wir pflegen und entwickeln die Software und Prozesslandschaft für die technische Steuerung der gesamten STRATO Plattform (Webhosting, Server, Storage, Netz-Infrastruktur etc.).
-
-Im Team Shared Hosting: Wir pflegen und entwickeln Open-Source-basierte Software (Service-Frontends, Mail- und Filesystem, etc.) für den Shared-Webhosting-Service (die Hosting-Pakete von STRATO) mit rund 1,5 Mio. Kunden. Wir verstehen unsere Software möglichst weitreichend, um die Kontrolle über Funktionalitäten zu behalten und bei Fehlern schnell selbst reagieren zu können. Ständig sind wir bestrebt, weiter zu optimieren, beobachten daher die Performance der Live-Umgebung und unterstützen bei Problemen. Darüber hinaus entwerfen und entwickeln wir neue Tools, die z.B. Prozesse verbessern oder unsere Plattform schützen.
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <span><img src="http://act.yapc.eu/gpw2021/images/Edument-logo-standard.png" width="250px"></span>
-                        <h4 class="my-3">Edument</h4>
-                        <p class="text-muted">
-Edument provides Raku support and consulting, develops the leading Raku IDE Comma, and supports the development of Cro, the most popular libraries for building web services and applications in Raku. Edument also offers development and training services in a wide range of other technologies, including developer tooling and compiler implementation.
-                        </p>
-                    </div>
-                </div>
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Become a sponsor!</button>
-                    </div>
-            </div>
-            -->
             </div>
         </section>
         <!-- Contact-->
