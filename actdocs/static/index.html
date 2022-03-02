@@ -123,45 +123,46 @@
             </div>
         </section>
 
-        <section class="page-section bg-light" id="cfp">
+        <section class="page-section bg-light" id="schedule">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase"><t><en>Call for Presentations</en><de>Vorträge einreichen</de></h2>
+                    <h2 class="section-heading text-uppercase"><t><en>Presentations</en><de>Vorträge</de></h2>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-6">
 
-                        <h4 class="my-3"><t><en>Call for Presentations</en><de>Vorträge einreichen</de></t></h4>
-
-                        <p class="text-muted">
-                             <t>
-                               <de>
-Das Thema in 2022 ist <strong>full script power</strong> – das steht für mächtige Skriptprogrammierung sowie das Potenzial, das Perl und Raku mit ihrer herausragenden Implementierung von Unicode und aller Skripte (Schriftsysteme) bieten. Vorträge mit diesen Schwerpunkten sind besonders gesucht, aber alle Beiträge zu Perl, Raku (früher Perl&nbsp;6) und Software-Entwicklung allgemein sind willkommen.
-                               </de>
-                               <en>
-The theme in 2022 is <b>full script power</b>—powerful script programming as well as the potential of Perl and Raku with their outstanding implementations of Unicode and all its scripts. We’re looking for talks covering the named theme but accept any contributions regarding Perl, Raku (formerly Perl&nbsp;6) or software development in general.
-                               </en>
-                             </t>
-                        </p>
-                        <p class="text-muted">
-                          <t>
-                            <de>
-Wir suchen nach Vorträgen mit 40 Minuten oder 20 Minuten Länge, sowie auch Kurzbeiträge ("Lightning Talks") mit einer Länge von 5 Minuten oder weniger. Für andere Formate wendet Euch bitte per E-Mail an die Veranstalter. Inspiration für Vorträge stehen im <a href="cfp.html">vollständigen CfP</a>
-                            </de>
-                            <en>
-We are looking for your contribution in the form a talk (20 minutes or 40 minutes),
-a lighting talk (5 minutes) or a workshop (2-4 hours). Some ideas for talks are listed in the <a href="cfp.html">Call for Presentations</a>
-                            </en>
-                          </t>
-                        </p>
-                    </div>
-                    <div class="col-md-6">
-                        <a class="btn btn-primary btn-xl text-uppercase" href="newtalk">
-                            <t>
-                                <en>Submit a talk</en>
-                                <de>Vortrag einreichen</de>
-                            </t>
-                        </a>
+                        <h4 class="my-3"><t><en>Presentations</en><de>Vorträge</de></t></h4>
+[% INCLUDE js/mytalks.js %]
+<table>
+<thead>
+ <tr>
+  <th>{{Speaker}}</th>
+  <th>{{Talk title}}</th>
+  [% IF global.config.talks_languages %]<th>{{Language}}</th>[% END %]
+  <th>{{Duration}}</th>
+ </tr>
+</thead>
+<tbody>
+ [% FOREACH t IN todo %]
+ <tr>
+  <td>
+   [% user_info(t.user) %]
+  </td>
+  <td>[% IF t.type == 'Act::Event' %]
+         [% event_link(t) %]
+         [% event_modify_link(t) %]
+      [% ELSE %]
+         [% talk_confirmed_link(t) %]
+         [% talk_modify_link(t) %]
+      [% END %]
+  </td>
+  [% IF global.config.talks_languages %]<td>[% global.config.talks_languages.${t.lang} %]</td>[% END %]
+  <td>[% t.duration %] {{minutes}}
+  </td>
+ </tr>
+ [% END %]
+</tbody>
+</table>
                     </div>
                 </div>
             </div>
