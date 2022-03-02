@@ -123,53 +123,6 @@
             </div>
         </section>
 
-        <section class="page-section bg-light" id="schedule">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase"><t><en>Presentations</en><de>Vorträge</de></h2>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-6">
-
-                        <h4 class="my-3"><t><en>Presentations</en><de>Vorträge</de></t></h4>
-[% INCLUDE js/mytalks.js %]
-[% global.schedule() %]
-<table>
-<thead>
- <tr>
-  <th>{{Speaker}}</th>
-  <th>{{Talk title}}</th>
-  [% IF global.config.talks_languages %]<th>{{Language}}</th>[% END %]
-  <th>{{Duration}}</th>
- </tr>
-</thead>
-<tbody>
- [% FOREACH t IN todo %]
- <tr>
-  <td>
-   [% user_info(t.user) %]
-  </td>
-  <td>[% IF t.type == 'Act::Event' %]
-         [% event_link(t) %]
-         [% event_modify_link(t) %]
-      [% ELSE %]
-         [% talk_confirmed_link(t) %]
-         [% talk_modify_link(t) %]
-      [% END %]
-  </td>
-  [% IF global.config.talks_languages %]<td>[% global.config.talks_languages.${t.lang} %]</td>[% END %]
-  <td>[% t.duration %] {{minutes}}
-  </td>
- </tr>
- [% END %]
-</tbody>
-</table>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
 
         <!-- Portfolio Grid-->
 [%
